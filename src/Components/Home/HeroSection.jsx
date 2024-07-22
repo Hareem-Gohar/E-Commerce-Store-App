@@ -12,7 +12,7 @@ const HeroSection = ({name , img}) => {
     return (
         <section className="max-w-7xl mx-auto px-10 py-2">
             <div className="flex flex-wrap  items-center justify-center text-black gap-10">
-                <div className=" w-full md:w-[43%] order-2 px-4">
+                <div className=  " w-full md:w-[43%] order-2 px-4">
                     <img
                         src={img}
                         alt="Hero Background"
