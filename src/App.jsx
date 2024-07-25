@@ -9,7 +9,7 @@ const App = () => {
   useScrollToTop();
   return (
     <>
-      <div className="flex flex-col h-screen justify-between">
+      <div className="flex flex-col h-screen">
         <div>
           <Header />
         </div>
