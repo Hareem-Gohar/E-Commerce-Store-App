@@ -8,14 +8,14 @@ const Footer = () => {
   }
   return (
     
-      <footer className="bg-sky-800 text-white py-12 relative">
+      <footer className="bg-amber-950 text-white py-12 relative">
         {/* Coupon Section */}
-        <div className="absolute inset-x-0 top-[-80px] text-black flex justify-center z-10">
-          <div className="bg-gray-50 shadow-xl p-6 rounded-lg max-w-3xl w-full text-center relative z-10">
+        <div className="absolute inset-x-0 top-[-80px] text-[#fefbf1] flex justify-center z-10">
+          <div className="bg-green-900 shadow-xl p-6 rounded-lg max-w-3xl w-full text-center relative z-10">
             <h3 className="text-2xl font-bold mb-2">Want to Start?</h3>
             <p className="text-lg mb-4">  Contact us TODAY <button 
             onClick={goToContact}
-            className="bg-sky-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-black transition-colors duration-300 mx-3 mt-3">Get Sarted</button></p>
+            className="bg-[#fefbf1] text-amber-900 px-4 py-2 rounded-lg font-semibold hover:bg-[#fefbf1] transition-colors duration-300 mx-3 mt-3">Get Sarted</button></p>
            
           </div>
         </div>
@@ -66,7 +66,7 @@ const Footer = () => {
           </div>
   
           {/* Footer Bottom */}
-          <div className="mt-16 border-t border-gray-600 pt-6 text-center text-gray-300">
+          <div className="mt-16 border-t border-green-900 pt-6 text-center text-white">
             <p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p>
           </div>
         </div>

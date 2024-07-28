@@ -8,12 +8,12 @@ const FeaturedMenCol = () => {
   if (isLoading) {
     return (
       <div className="flex flex-col justify-center items-center h-screen">
-        <h2 className="text-4xl font-bold text-center mb-12 text-black uppercase">
+        <h2 className="text-4xl font-bold text-center mb-12 text-amber-950  uppercase">
           Featured Men's Collection
         </h2>
         <div className="relative w-16 h-16">
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-12 h-12 border-t-4 border-sky-700 border-solid rounded-full animate-spin"></div>
+            <div className="w-12 h-12 border-t-4 border-amber-700 border-solid rounded-full animate-spin"></div>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@ const FeaturedMenCol = () => {
 
   return (
     <section className="max-w-7xl w-full mx-auto py-28 px-10">
-      <h2 className="text-4xl font-bold text-center mb-12 text-black uppercase">
+      <h2 className="text-4xl font-bold text-center mb-12 text-amber-950 uppercase">
         Featured Men's Collection
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

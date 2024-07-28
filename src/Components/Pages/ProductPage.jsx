@@ -30,7 +30,7 @@ const ProductPage = () => {
     <div className="mx-auto p-6">
        <NavLink 
             to="/" 
-            className="bg-gray-200 text-sky-700 p-3 rounded-full mb-6 hover:bg-gray-300 transition duration-200 inline-block"
+            className="bg-amber-900 text-[#fefbf1] p-3 rounded-full mb-6 hover:bg-gray-300 transition duration-200 inline-block"
           >
             <IoMdArrowRoundBack fontSize={20} />
           </NavLink>
@@ -41,21 +41,21 @@ const ProductPage = () => {
           </h2>
           <div className="relative w-16 h-16">
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-12 h-12 border-t-4 border-sky-700 border-solid rounded-full animate-spin"></div>
+              <div className="w-12 h-12 border-t-4 border-amber-900 border-solid rounded-full animate-spin"></div>
             </div>
           </div>
         </div>
       ) : (
         <div className="max-w-7xl mx-auto overflow-hidden mb-10">
           <div className="flex justify-between items-center flex-col md:flex-row">
-            <div className="w-full md:w-1/2 flex justify-center">
+            <div className="w-full md:w-1/2 flex justify-center bg-white py-7 px-4 rounded-lg shadow-md">
               <img src={image} alt={title} className="w-[300px] h-full object-cover" />
             </div>
-            <div className="w-full md:w-1/2 p-6">
+            <div className="w-full md:w-1/2 py-6 px-10">
               <h1 className="text-4xl font-bold mb-4 text-black">{title}</h1>
               <p className="text-gray-700 mb-6">{description}</p>
               <div className="mb-4">
-                <span className="bg-sky-700 text-white py-1 px-5  font-semibold rounded-full text-sm uppercase tracking-wide">{category}</span>
+                <span className="bg-amber-900 text-white py-1 px-5  font-semibold rounded-full text-sm uppercase tracking-wide">{category}</span>
               </div>
               <div className="text-3xl font-semibold text-gray-900 mb-4">${price}</div>
               <div className="flex items-center mb-6">
@@ -74,7 +74,7 @@ const ProductPage = () => {
                 </div> */}
                 {/* <span className="text-gray-700 ml-2">{rating.rate} ({rating.count} reviews)</span> */}
               </div>
-              <NavLink to="/cart" className="w-full inline-block text-center md:w-1/2 bg-sky-700 text-white py-3 rounded-lg text-lg font-semibold hover:bg-sky-800 transition duration-300">Add to Cart</NavLink>
+              <NavLink to="/cart" className="w-full inline-block text-center md:w-1/2 bg-amber-900 text-white py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition duration-300">Add to Cart</NavLink>
             </div>
           </div>
         </div>

@@ -21,11 +21,11 @@ const Header = () => {
 
   return (
     <nav className="bg-white shadow-md relative">
-      <div className=" w-full mx-auto px-4 py-3 flex gap-4 items-center justify-between">
+      <div className="w-full mx-auto px-4 py-4 flex gap-4 items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-10" />
-        </div>
+        <NavLink to="/" className="flex font-bold text-amber-950 logo items-center">
+          BoKoSM
+        </NavLink>
 
         {/* Navigation Links */}
         <div className="flex gap-3 items-center">
@@ -35,7 +35,7 @@ const Header = () => {
               <li key={index} className='text-lg font-semibold'>
                 <NavLink
                   to={link.path}
-                  className={({ isActive }) => isActive ? 'text-sky-700' : 'text-black'}
+                  className={({ isActive }) => isActive ? 'text-amber-900' : 'text-black'}
                 >
                   {link.name}
                 </NavLink>
@@ -44,10 +44,10 @@ const Header = () => {
           </ul>
 
           {/* Mobile Navigation Toggle */}
-          <div className='inline-block mt-2 md:hidden relative z-10'>
+          <div className='inline-block mt-2 md:hidden relative z-20'>
             <button onClick={toggleMenu} className="focus:outline-none">
               {openMenu ? (
-                <IoCloseOutline fontSize={35} className='text-sky-700 absolute' />
+                <IoCloseOutline fontSize={35} className='text-Amber-700' />
               ) : (
                 <CiMenuBurger fontSize={25} className='text-gray-800' />
               )}
@@ -64,21 +64,21 @@ const Header = () => {
               <HiOutlineShoppingCart fontSize={25} />
             </NavLink>
             {/* Cart Item Count (dummy value for demonstration) */}
-            <span className='absolute bg-sky-700 text-white px-1 py-0 rounded-full text-sm bottom-[15px] left-0'>0</span>
+            <span className='absolute bg-amber-900 text-white px-1 py-0 rounded-full text-sm bottom-[15px] left-0'>0</span>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-0 z-0 bg-white/10 backdrop-blur-lg transform transition-transform duration-300 ${openMenu ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`md:hidden fixed inset-0 z-10 bg-white/10 backdrop-blur-lg transform transition-transform duration-300 ${openMenu ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <ul className="flex flex-col items-center justify-center h-full gap-8">
           {navLinks.map((link, index) => (
             <li key={index} className='text-lg font-semibold'>
               <NavLink
                 to={link.path}
-                className={({ isActive }) => isActive ? 'text-sky-700' : 'text-black'}
+                className={({ isActive }) => isActive ? 'text-amber-900' : 'text-black'}
                 onClick={toggleMenu}
               >
                 {link.name}
