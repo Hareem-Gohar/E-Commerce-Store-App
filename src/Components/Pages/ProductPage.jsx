@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useProductContext } from '../Context/ProductContext';
 import { IoMdArrowRoundBack } from 'react-icons/io';
+import Stars from '../ProductCard/Stars';
+import AddToCartbtn from '../ProductCard/AddToCartbtn';
+import CartAmoToggle from '../ProductCard/CartAmoToggle';
 
 const productApi = "https://fakestoreapi.com/products";
 
@@ -25,6 +28,17 @@ const ProductPage = () => {
     rating,
     title
   } = singleProduct;
+
+  // for Amoun Toggling
+  const [amount, setAmount] = useState(1);
+  const setDecrese = () =>{
+    if(amount > 1) {
+      setAmount(amount - 1);
+    }
+  }
+  const setIncrease = () =>{
+    setAmount(amount + 1);
+  }
 
   return (
     <div className="mx-auto p-6">
@@ -59,22 +73,12 @@ const ProductPage = () => {
               </div>
               <div className="text-3xl font-semibold text-gray-900 mb-4">${price}</div>
               <div className="flex items-center mb-6">
-                {/* <div className="text-yellow-500 flex space-x-1">
-                  {[...Array(5)].map((star, index) => (
-                    <svg
-                      key={index}
-                      className={`w-5 h-5 ${index < rating.rate ? 'text-yellow-500' : 'text-gray-300'}`}
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.26 3.888a1 1 0 00.95.69h4.104c.969 0 1.371 1.24.588 1.81l-3.32 2.432a1 1 0 00-.364 1.118l1.26 3.888c.3.921-.755 1.688-1.54 1.118l-3.32-2.432a1 1 0 00-1.175 0l-3.32 2.432c-.784.57-1.838-.197-1.54-1.118l1.26-3.888a1 1 0 00-.364-1.118L2.65 8.515c-.783-.57-.381-1.81.588-1.81h4.104a1 1 0 00.95-.69l1.26-3.888z" />
-                    </svg>
-                  ))}
-                </div> */}
-                {/* <span className="text-gray-700 ml-2">{rating.rate} ({rating.count} reviews)</span> */}
+              <Stars reviews={rating?.count} rating={rating?.rate} />
               </div>
-              <NavLink to="/cart" className="w-full inline-block text-center md:w-1/2 bg-amber-900 text-white py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition duration-300">Add to Cart</NavLink>
+              <CartAmoToggle amount={amount}
+              setDecrease={setDecrese}
+              setIncrease={setIncrease} />
+             <AddToCartbtn />
             </div>
           </div>
         </div>

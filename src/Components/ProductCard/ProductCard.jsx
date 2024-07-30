@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { CurrencyFormat } from '../Utility/CurrencyFormat'; // Adjust the import path as needed
+import AddToCartbtn from './AddToCartbtn';
 
 const ProductCard = ({ product }) => {
   const { id, image, title, price, rating } = product;
@@ -15,7 +16,6 @@ const ProductCard = ({ product }) => {
           src={image}
           alt={title}
           className="w-full h-full object-contain object-center"
-          style={{ objectFit: 'contain' }} // Ensures image covers the area without stretching
         />
       </div>
       <div className="flex flex-col flex-1 p-6">
@@ -25,10 +25,11 @@ const ProductCard = ({ product }) => {
           <span className="text-sm font-semibold text-green-900">{rating.rate}</span>
           <span className="text-sm text-green-900 ml-1">/ 5</span>
         </div>
-        <div className="mt-auto">
+        <div className="flex  flex-col gap-3">
           <button className="w-full bg-green-900 text-white py-2 px-4 rounded-lg hover:bg-amber-900 transition-colors duration-300">
             View Details
           </button>
+          <AddToCartbtn />
         </div>
       </div>
     </NavLink>
