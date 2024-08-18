@@ -1,6 +1,6 @@
 import React from 'react';
 import { useProductContext } from '../Context/ProductContext'; // Adjust the import path as needed
-import ProductCard from '../ProductCard/ProductCard'; // Adjust the import path as needed
+import ProductCard from '../Product/ProductCard'; // Adjust the import path as needed
 
 const FeaturedMenCol = () => {
   const { isLoading, featuredProducts } = useProductContext();
@@ -22,7 +22,7 @@ const FeaturedMenCol = () => {
 
   if (!featuredProducts.length) {
     return (
-      <div className="text-center text-lg font-semibold text-gray-600 mt-10">
+      <div className="text-center text-lg font-semibold text-black mt-10">
         No featured products available
       </div>
     );
@@ -30,7 +30,7 @@ const FeaturedMenCol = () => {
 
   return (
     <section className="max-w-7xl w-full mx-auto py-28 px-10">
-      <h2 className="text-4xl font-bold text-center mb-12 text-amber-950 uppercase">
+      <h2 className="text-4xl font-bold text-center mb-12 text-black uppercase">
         Featured Men's Collection
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

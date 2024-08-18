@@ -31,7 +31,7 @@ const ContactUs = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {/* Name Field */}
             <div>
-              <label htmlFor="name" className="block text-gray-700 text-sm font-medium mb-2">
+              <label htmlFor="name" className="block text-black text-sm font-medium mb-2">
                 Name
               </label>
               <input
@@ -45,7 +45,7 @@ const ContactUs = () => {
 
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-gray-700 text-sm font-medium mb-2">
+              <label htmlFor="email" className="block text-black text-sm font-medium mb-2">
                 Email
               </label>
               <input
@@ -60,7 +60,7 @@ const ContactUs = () => {
 
           {/* Subject Field */}
           <div className="mb-6">
-            <label htmlFor="subject" className="block text-gray-700 text-sm font-medium mb-2">
+            <label htmlFor="subject" className="block text-black text-sm font-medium mb-2">
               Subject
             </label>
             <input
@@ -74,7 +74,7 @@ const ContactUs = () => {
 
           {/* Message Field */}
           <div className="mb-6">
-            <label htmlFor="message" className="block text-gray-700 text-sm font-medium mb-2">
+            <label htmlFor="message" className="block text-black text-sm font-medium mb-2">
               Message
             </label>
             <textarea
@@ -90,7 +90,7 @@ const ContactUs = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-amber-900 text-white py-3 px-6 rounded-lg shadow-md hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-300 ease-in-out"
+              className="bg-black text-white border-black border py-3 px-6 rounded-lg shadow-md hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-300 ease-in-out"
             >
               Send Message
             </button>

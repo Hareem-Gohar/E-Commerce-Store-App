@@ -1,9 +1,9 @@
 import React from 'react'
 import './App.css'
 import useScrollToTop from './Components/CustomHook/useScrollToTop ';
-import Header from './Components/Header/Header'
+import Header from './Components/layout/Header'
 import { Outlet } from 'react-router-dom'
-import Footer from './Components/Footer/Footer'
+import Footer from './Components/layout/Footer'
 
 const App = () => {
   useScrollToTop();
