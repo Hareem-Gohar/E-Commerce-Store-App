@@ -5,26 +5,50 @@ import filterReducer from "../Reducer/FilterReducer";
 const FilterContext = createContext();
 
 const initialState = {
-    filtersProducts: [],
+    filterProducts: [],
     allProducts: [],
-}
-
+    filter: {
+        text: "",
+        category: "",
+        minPrice: 0,
+        maxPrice: 1000,
+    },
+};
 export const FilterContextProvider = ({ children }) => {
-
     const { products } = useProductContext();
     const [state, dispatch] = useReducer(filterReducer, initialState);
 
+    // Load products into the state when they change
     useEffect(() => {
-        dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products })
-    }, [])
+        if (products.length) {
+            dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
+        }
+    }, [products]);
 
-    return <FilterContext.Provider value={{ ...state }}>
-        {children}
-    </FilterContext.Provider>
+    // Apply filters when the products or filter state change
+    useEffect(() => {
+        if (state.allProducts.length) {
+            dispatch({ type: "FILTER_PRODUCTS" });
+        }
+    }, [state.filter, state.allProducts]);
 
-}
+    // Function to update filter values
+    const updateFilterVal = (e) => {
+        const name = e.target.name;  // Corrected this line
+        const value = e.target.value;
+        dispatch({ type: "UPDATE_FILTER_VAL", payload: { name, value } });
+    };
+    const clearFilters = () => {
+        dispatch({ type: "CLEAR_FILTERS" });
+    };
 
+    return (
+        <FilterContext.Provider value={{ ...state, updateFilterVal, clearFilters }}>
+            {children}
+        </FilterContext.Provider>
+    );
+};
 
 export const useFilterContext = () => {
-    return useContext(FilterContext)
-} 
+    return useContext(FilterContext);
+};

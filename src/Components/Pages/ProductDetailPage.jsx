@@ -5,6 +5,8 @@ import { IoMdArrowRoundBack } from 'react-icons/io';
 import Stars from '../Product/Stars';
 import AddToCartbtn from '../Common/AddToCartbtn';
 import CartAmoToggle from '../Product/CartAmoToggle';
+import { CurrencyFormat } from '../Utility/CurrencyFormat'; // Adjust the import path as needed
+
 
 const productApi = "https://fakestoreapi.com/products";
 
@@ -71,7 +73,7 @@ const ProductDetailPage = () => {
               <div className="mb-4">
                 <span className="bg-black text-white py-1 px-5  font-semibold rounded-full text-sm uppercase tracking-wide">{category}</span>
               </div>
-              <div className="text-3xl font-semibold text-gray-900 mb-4">${price}</div>
+              <div className="text-3xl font-semibold text-gray-900 mb-4">{CurrencyFormat(price)}</div>
               <div className="flex items-center mb-6">
               <Stars reviews={rating?.count} rating={rating?.rate} />
               </div>

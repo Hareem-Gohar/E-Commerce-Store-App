@@ -3,20 +3,24 @@ import FilterProducts from '../Product/FilterProducts'
 import ProductlList from '../Product/ProductlList'
 import { useFilterContext } from '../Context/Filter'
 
-const ProductPage = ({}) => {
-  const {filterProducts} = useFilterContext();
-  console.log(filterProducts)
+const ProductPage = ({ }) => {
+  const { filterProducts } = useFilterContext();
+  console.log("products", filterProducts)
   return (
     <>
-    <div className="max-w-7xl w-full mx-auto px-4">
-      <div className="">
-       <FilterProducts />
+      <div className="max-w-7xl w-full mx-auto px-4">
+        <div className="flex flex-wrap justify-between">
+          <div className=" w-full sm:w-[40%] md:w-[25%] ">
+            <FilterProducts />
+          </div>
+          <div className="w-full sm:w-[55%] md:w-[70%]">
+            <ProductlList />
+          </div>
+        </div>
+
       </div>
-    </div> 
-   <div className="">
-    <ProductlList />
-   </div>
-    {/* <ProductCard /> */}
+
+      {/* <ProductCard /> */}
     </>
   )
 }
