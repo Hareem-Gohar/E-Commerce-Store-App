@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useProductContext } from '../Context/ProductContext';
-import { IoMdArrowRoundBack } from 'react-icons/io';
 import Stars from '../Product/Stars';
 import AddToCartbtn from '../Common/AddToCartbtn';
 import CartAmoToggle from '../Product/CartAmoToggle';
 import { CurrencyFormat } from '../Utility/CurrencyFormat'; // Adjust the import path as needed
+import NavigateBack from '../Common/NavigateBack';
+
 
 
 const productApi = "https://fakestoreapi.com/products";
@@ -13,7 +14,7 @@ const productApi = "https://fakestoreapi.com/products";
 const ProductDetailPage = () => {
   const { isSingleLoading, singleProduct, getSingleProduct } = useProductContext();
   const { id } = useParams();
-  
+
   useEffect(() => {
     getSingleProduct(`${productApi}/${id}`);
   }, [id]);
@@ -31,25 +32,21 @@ const ProductDetailPage = () => {
     title
   } = singleProduct;
 
-  // for Amoun Toggling
+  // for Amount Toggling
   const [amount, setAmount] = useState(1);
-  const setDecrese = () =>{
-    if(amount > 1) {
+  const setDecrese = () => {
+    if (amount > 1) {
       setAmount(amount - 1);
     }
   }
-  const setIncrease = () =>{
+  const setIncrease = () => {
     setAmount(amount + 1);
   }
 
+
   return (
     <div className="mx-auto p-6">
-       <NavLink 
-            to="/" 
-            className="bg-black text-[#fefbf1] p-3 rounded-full mb-6 hover:bg-gray-300 transition duration-200 inline-block"
-          >
-            <IoMdArrowRoundBack fontSize={20} />
-          </NavLink>
+      <NavigateBack />
       {isSingleLoading ? (
         <div className="flex flex-col justify-center items-center h-screen">
           <h2 className="text-4xl font-bold text-center mb-12 text-black uppercase">
@@ -75,15 +72,15 @@ const ProductDetailPage = () => {
               </div>
               <div className="text-3xl font-semibold text-gray-900 mb-4">{CurrencyFormat(price)}</div>
               <div className="flex items-center mb-6">
-              <Stars reviews={rating?.count} rating={rating?.rate} />
+                <Stars reviews={rating?.count} rating={rating?.rate} />
               </div>
               <div className="flex gap-4 items-start">
-              <CartAmoToggle amount={amount}
-              setDecrease={setDecrese}
-              setIncrease={setIncrease} />
-             <AddToCartbtn />  
+                <CartAmoToggle amount={amount}
+                  setDecrease={setDecrese}
+                  setIncrease={setIncrease} />
+                <AddToCartbtn amount={amount} product={singleProduct} id={id} />
               </div>
-              
+
             </div>
           </div>
         </div>

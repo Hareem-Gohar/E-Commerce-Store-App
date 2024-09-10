@@ -7,10 +7,7 @@ const ProductCard = ({ product }) => {
   const { id, image, title, price, rating } = product;
 
   return (
-    <NavLink
-      to={`/singleproduct/${id}`}
-      className="flex flex-col border shadow-lg overflow-hidden"
-    >
+    <div className='flex flex-col border '>
       <div className="w-full h-72 relative flex justify-center items-center overflow-hidden px-4 py-5 bg-white">
         <img
           src={image}
@@ -26,14 +23,17 @@ const ProductCard = ({ product }) => {
           <span className="text-sm text-black ml-1">/ 5</span>
         </div>
         <div className="flex flex-col gap-3">
-          <button className="w-full bg-white text-black border border-black py-2 px-4  hover:bg-black hover:text-white transition-colors duration-300">
+          <NavLink
+            to={`/singleproduct/${id}`} className="w-full bg-white text-black border border-black py-2 px-4  hover:bg-black hover:text-white transition-colors duration-300 text-center">
             View Details
-          </button>
-          <AddToCartbtn />
+            </NavLink>
+          {/* <AddToCartbtn  product={product} /> */}
+
         </div>
-      </div>
-    </NavLink>
+      </div></div>
   );
 };
 
 export default ProductCard;
+
+// flex flex-col border shadow-lg overflow-hidden

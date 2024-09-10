@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "../Common/HeroSection";
 import aboutbanner from "../../assets/images/about-banner-.png";
 import aboutUSImg from "../../assets/images/aboutus.jpg";
+import NavigateBack from "../Common/NavigateBack";
 
 const AboutUs = () => {
   return (

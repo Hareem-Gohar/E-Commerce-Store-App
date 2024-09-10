@@ -12,6 +12,7 @@ import Cart from './Components/Pages/Cart.jsx'
 import Error from './Components/Pages/Error.jsx'
 import { AppProvider } from './Components/Context/ProductContext.jsx'
 import { FilterContextProvider } from './Components/Context/Filter.jsx'
+import { CartProvider } from './Components/Context/CartContext.jsx'
 
 
 
@@ -55,7 +56,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <AppProvider>
     <FilterContextProvider>
-      <RouterProvider router={router} />
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
     </FilterContextProvider>
   </AppProvider>
 

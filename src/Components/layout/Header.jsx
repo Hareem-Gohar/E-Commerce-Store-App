@@ -4,6 +4,7 @@ import logo from "../../assets/images/logo-img.png";
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { CiMenuBurger } from 'react-icons/ci';
 import { IoCloseOutline } from 'react-icons/io5';
+import { useCartContext } from '../Context/CartContext';
 
 const Header = () => {
   const navLinks = [
@@ -14,6 +15,7 @@ const Header = () => {
   ];
 
   const [openMenu, setOpenMenu] = useState(false);
+  const {total_items} = useCartContext();
 
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
@@ -65,7 +67,7 @@ const Header = () => {
               <HiOutlineShoppingCart fontSize={25} />
             </NavLink>
             {/* Cart Item Count (dummy value for demonstration) */}
-            <span className='absolute bg-black text-white px-1 py-0 rounded-full text-sm bottom-[15px] left-0'>0</span>
+            <span className='absolute bg-black text-white px-1 py-0 rounded-full text-sm bottom-[15px] left-0'>{console.log(total_items)}</span>
           </div>
         </div>
       </div>
