@@ -7,7 +7,7 @@ import NavigateBack from '../Common/NavigateBack';
 import CartAmoToggle from '../Product/CartAmoToggle';
 
 const Cart = () => {
-  const { cart, total_items, total_amount, removeItem, updateItemAmount } = useCartContext();
+  const { cart, total_items, total_amount, removeItem, updateItemAmount, checkout  } = useCartContext();
 
   // Helper function to render cart items
   const renderCartItems = () => {
@@ -50,7 +50,7 @@ const Cart = () => {
       </div>
       {cart && cart.length > 0 &&(
         <>
-          <div className="flex justify-between items-center border-t pt-4">
+          <div className="flex flex-wrap justify-between items-center border-t pt-4">
             <h2 className="text-xl font-semibold">Total Items: {total_items}</h2>
             <h2 className="text-xl font-semibold">Total Amount: {CurrencyFormat(total_amount)}</h2>
           </div>

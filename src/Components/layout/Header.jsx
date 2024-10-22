@@ -12,6 +12,7 @@ const Header = () => {
     { name: 'About us', path: '/aboutUs' },
     { name: 'Contact', path: '/contactUs' },
     { name: 'Product', path: '/products' },
+    { name: 'Checkout', path: '/checkout' },
   ];
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -66,8 +67,8 @@ const Header = () => {
             >
               <HiOutlineShoppingCart fontSize={25} />
             </NavLink>
-            {/* Cart Item Count (dummy value for demonstration) */}
-            <span className='absolute bg-black text-white px-1 py-0 rounded-full text-sm bottom-[15px] left-0'>{console.log(total_items)}</span>
+            {/* Cart Item Count */}
+            <span className='absolute bg-black text-white px-1.5 py-0.5 rounded-full text-xs bottom-[15px] left-0'>{total_items}</span>
           </div>
         </div>
       </div>

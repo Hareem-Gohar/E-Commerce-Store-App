@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { CurrencyFormat } from '../Utility/CurrencyFormat'; // Adjust the import path as needed
+import { CurrencyFormat } from '../Utility/CurrencyFormat';
 import AddToCartbtn from '../Common/AddToCartbtn';
 
 const ProductCard = ({ product }) => {
   const { id, image, title, price, rating } = product;
+   
+ 
 
   return (
     <div className='flex flex-col border '>
@@ -28,7 +30,7 @@ const ProductCard = ({ product }) => {
             View Details
             </NavLink>
           {/* <AddToCartbtn  product={product} /> */}
-
+          <AddToCartbtn amount={1} product={product} />
         </div>
       </div></div>
   );
@@ -36,4 +38,3 @@ const ProductCard = ({ product }) => {
 
 export default ProductCard;
 
-// flex flex-col border shadow-lg overflow-hidden

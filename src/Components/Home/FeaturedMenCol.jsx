@@ -1,6 +1,6 @@
 import React from 'react';
-import { useProductContext } from '../Context/ProductContext'; // Adjust the import path as needed
-import ProductCard from '../Product/ProductCard'; // Adjust the import path as needed
+import { useProductContext } from '../Context/ProductContext'; 
+import ProductCard from '../Product/ProductCard'; 
 
 const FeaturedMenCol = () => {
   const { isLoading, featuredProducts } = useProductContext();

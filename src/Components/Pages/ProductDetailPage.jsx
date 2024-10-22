@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { useProductContext } from '../Context/ProductContext';
 import Stars from '../Product/Stars';
 import AddToCartbtn from '../Common/AddToCartbtn';
 import CartAmoToggle from '../Product/CartAmoToggle';
-import { CurrencyFormat } from '../Utility/CurrencyFormat'; // Adjust the import path as needed
+import { CurrencyFormat } from '../Utility/CurrencyFormat'; 
 import NavigateBack from '../Common/NavigateBack';
 
 
@@ -78,7 +78,11 @@ const ProductDetailPage = () => {
                 <CartAmoToggle amount={amount}
                   setDecrease={setDecrese}
                   setIncrease={setIncrease} />
-                <AddToCartbtn amount={amount} product={singleProduct} id={id} />
+                <NavLink
+                  to={'/cart'} >
+                  <AddToCartbtn amount={amount} product={singleProduct}  />
+                </NavLink>
+
               </div>
 
             </div>

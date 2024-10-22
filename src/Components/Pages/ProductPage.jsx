@@ -24,8 +24,6 @@ const ProductPage = ({ }) => {
         </div>
 
       </div>
-
-      {/* <ProductCard /> */}
     </>
   )
 }

@@ -6,7 +6,7 @@ const HeroSection = ({ name, img }) => {
   const navigate = useNavigate();
 
   const handleGoClick = () => {
-    navigate("/products"); // Navigate to the home page or another page
+    navigate("/products"); 
   };
   return (
     <>

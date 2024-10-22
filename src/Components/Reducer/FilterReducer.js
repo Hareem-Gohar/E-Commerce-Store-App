@@ -4,7 +4,7 @@ const initialState = {
     filter: {
         text: "",
         category: "",
-        maxPrice: 100000,  // Set the default max price
+        maxPrice: 100000,  
     },
 };
 

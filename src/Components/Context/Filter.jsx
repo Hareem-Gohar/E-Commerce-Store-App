@@ -34,7 +34,7 @@ export const FilterContextProvider = ({ children }) => {
 
     // Function to update filter values
     const updateFilterVal = (e) => {
-        const name = e.target.name;  // Corrected this line
+        const name = e.target.name; 
         const value = e.target.value;
         dispatch({ type: "UPDATE_FILTER_VAL", payload: { name, value } });
     };

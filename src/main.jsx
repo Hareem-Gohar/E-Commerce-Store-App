@@ -13,6 +13,8 @@ import Error from './Components/Pages/Error.jsx'
 import { AppProvider } from './Components/Context/ProductContext.jsx'
 import { FilterContextProvider } from './Components/Context/Filter.jsx'
 import { CartProvider } from './Components/Context/CartContext.jsx'
+import Checkout from './Components/Pages/Checkout.jsx'
+import OrderConform from './Components/Pages/OrderConform.jsx'
 
 
 
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />
+      },
+      {
+        path: "/order-confirmation",
+        element: <OrderConform />
       },
       {
         path: "*",
